@@ -29,10 +29,6 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
-
   // Transpile workspace packages.
   transpilePackages: ['@inventory/types', '@inventory/validation'],
 };

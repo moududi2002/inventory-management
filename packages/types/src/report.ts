@@ -1,3 +1,5 @@
+import type { DateRangeQuery } from './common';
+
 /**
  * Reports — all report types share a common filter shape.
  */

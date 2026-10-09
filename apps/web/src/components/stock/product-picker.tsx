@@ -30,7 +30,12 @@ export function ProductPicker({
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const { data: results, isFetching } = useProductSearch(debouncedQ, open);
+  const {
+  data: results,
+  isFetching,
+} = useProductSearch(debouncedQ, open);
+
+const products: ProductListItem[] = results ?? [];
 
   // Close dropdown on outside click.
   useEffect(() => {
@@ -43,6 +48,8 @@ export function ProductPicker({
     document.addEventListener('mousedown', handle);
     return () => document.removeEventListener('mousedown', handle);
   }, []);
+
+  const selectedProductId = selected?._id;
 
   // ----- Selected state -----
   if (selected) {
@@ -119,7 +126,7 @@ export function ProductPicker({
             </div>
           ) : (
             <ul className="divide-y">
-              {results.map((p) => (
+              {products.map((p) => (
                 <li key={p._id}>
                   <button
                     type="button"
@@ -152,7 +159,7 @@ export function ProductPicker({
                     <Check
                       className={cn(
                         'size-4 shrink-0',
-                        selected?._id === p._id
+                        selectedProductId === p._id
                           ? 'text-primary'
                           : 'text-transparent',
                       )}

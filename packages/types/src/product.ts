@@ -1,3 +1,6 @@
+import type { Category } from './category';
+import type { PaginationQuery } from './common';
+
 /**
  * Product — core entity. Includes cost price for profit calculation.
  */

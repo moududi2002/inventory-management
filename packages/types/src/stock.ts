@@ -1,3 +1,5 @@
+import type { DateRangeQuery, PaginationQuery } from './common';
+
 /**
  * Stock transactions — every stock movement is logged.
  */

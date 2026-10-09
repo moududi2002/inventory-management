@@ -114,12 +114,15 @@ export function SalesChart() {
                     fontSize: 12,
                   }}
                   labelFormatter={(label) => `Date: ${label}`}
-                  formatter={(value: number, name: string) => {
+                  formatter={(value, name) => {
+                    const numericValue = Number(value ?? 0);
+
                     if (name === 'totalSales') {
-                      return [formatMoneyCompact(value), 'Sales'];
+                        return [formatMoneyCompact(numericValue), 'Sales'];
                     }
-                    return [value, 'Qty'];
-                  }}
+
+                    return [numericValue, 'Qty'];
+                    }}
                 />
                 <Area
                   type="monotone"

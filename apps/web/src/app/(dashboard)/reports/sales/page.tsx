@@ -174,7 +174,7 @@ export default function SalesReportPage() {
                     borderRadius: 8,
                     fontSize: 12,
                   }}
-                  formatter={(value: number) => [formatMoney(value), 'Sales']}
+                  formatter={(value) => [formatMoney(Number(value ?? 0)), 'Sales']}
                 />
                 <Area
                   type="monotone"

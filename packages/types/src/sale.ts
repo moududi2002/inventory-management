@@ -1,3 +1,5 @@
+import type { DateRangeQuery, PaginationQuery } from './common';
+
 /**
  * Sale — supports multiple items per receipt, snapshots cost/price per item.
  */

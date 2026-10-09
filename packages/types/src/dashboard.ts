@@ -1,3 +1,5 @@
+import type { TransactionType } from './stock';
+
 /**
  * Dashboard aggregate stats.
  */

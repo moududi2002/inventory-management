@@ -51,9 +51,9 @@ export default function SampleReceiptPage() {
                 shopAddress={settings.shopAddress}
                 shopPhone={settings.shopPhone}
                 shopEmail={settings.shopEmail}
-                logoUrl={settings.logoUrl}
+                logoUrl={settings.logoUrl ?? null}
                 currencySymbol={settings.currencySymbol}
-                footerNote={settings.receiptFooterNote}
+                footerNote={settings.receiptFooterNote ?? null}
               />
             </CardContent>
           </Card>
